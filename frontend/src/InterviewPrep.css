@@ -1,0 +1,512 @@
+/* ============================================================
+   InterviewPrep.css — scoped styles for the Interview Prep page
+   ============================================================ */
+
+/* ---- Shell ---- */
+.ip-shell {
+  padding: 48px 0 100px;
+  scroll-margin-top: 24px;
+}
+
+/* ---- Eyebrow / headings (reuse App tokens) ---- */
+.ip-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #278c78;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.ip-heading {
+  margin: 0 0 10px;
+  color: #172a3b;
+  font: 800 clamp(26px, 4vw, 36px)/1.15 'Manrope', sans-serif;
+  letter-spacing: -1.2px;
+}
+
+.ip-subheading {
+  margin: 0 0 24px;
+  color: #718092;
+  font-size: 15px;
+  line-height: 1.65;
+  max-width: 580px;
+}
+
+.ip-section-title {
+  color: #243a4d;
+  font: 700 15px 'Manrope', sans-serif;
+  margin: 0;
+}
+
+/* ---- Banner ---- */
+.ip-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  padding: 11px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  border: 1px solid;
+}
+
+.ip-banner--ok   { background: #f0faf6; border-color: #c3e9dd; color: #1e6b5c; }
+.ip-banner--warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+
+/* ---- Forms & inputs ---- */
+.ip-setup-form {
+  background: white;
+  border: 1px solid #e4eaf0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px #163b520a;
+  margin-bottom: 36px;
+}
+
+.ip-field { margin-bottom: 22px; }
+
+.ip-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2a3c4d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.ip-optional { color: #9aa6b1; font-weight: 400; }
+
+.ip-input,
+.ip-textarea {
+  width: 100%;
+  padding: 10px 13px;
+  border: 1px solid #dde4ea;
+  border-radius: 9px;
+  background: #fafcfd;
+  color: #172a3b;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  resize: vertical;
+}
+
+.ip-input:focus,
+.ip-textarea:focus {
+  border-color: #278c78;
+  box-shadow: 0 0 0 3px #278c7820;
+  background: #fff;
+}
+
+.ip-textarea        { min-height: 110px; line-height: 1.6; }
+.ip-answer-textarea { min-height: 140px; }
+
+/* ---- Difficulty cards ---- */
+.ip-difficulty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.ip-diff-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 12px 14px;
+  border: 2px solid #e4eaf0;
+  border-radius: 11px;
+  background: #fafcfd;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color .15s, background .15s;
+  font-family: inherit;
+}
+
+.ip-diff-card:hover      { border-color: #9dd4c8; background: #f5fbf9; }
+.ip-diff-card--active    { border-color: #278c78; background: #f0faf6; }
+
+.ip-diff-label { font: 700 13px 'Manrope', sans-serif; color: #243a4d; }
+.ip-diff-desc  { font-size: 11px; color: #8a98a6; }
+.ip-diff-card--active .ip-diff-label { color: #278c78; }
+
+/* ---- Topic buttons ---- */
+.ip-topics-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ip-topic-btn {
+  padding: 7px 13px;
+  border: 1px solid #dde4ea;
+  border-radius: 8px;
+  background: #fafcfd;
+  color: #526476;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+
+.ip-topic-btn:hover       { border-color: #9dd4c8; color: #278c78; }
+.ip-topic-btn--active     { border-color: #278c78; background: #f0faf6; color: #278c78; }
+
+/* ---- Buttons ---- */
+.ip-start-btn {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 10px;
+  background: #278c78;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .2s, transform .2s;
+}
+
+.ip-start-btn:hover:not(:disabled) { background: #1f7665; transform: translateY(-1px); }
+.ip-start-btn:disabled             { opacity: .65; cursor: not-allowed; }
+.ip-start-btn--sm                  { width: auto; height: 40px; padding: 0 20px; font-size: 13px; }
+
+.ip-btn-ghost {
+  padding: 6px 12px;
+  border: 1px solid #dde4ea;
+  border-radius: 8px;
+  background: white;
+  color: #526476;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+
+.ip-btn-ghost:hover      { border-color: #278c78; color: #278c78; }
+.ip-btn-sm               { padding: 4px 10px; font-size: 11px; }
+.ip-btn-danger:hover     { border-color: #c0392b; color: #c0392b; }
+
+/* ---- Error ---- */
+.ip-error {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fff5f5;
+  color: #991b1b;
+  font-size: 13px;
+}
+
+/* ---- Pills & badges ---- */
+.ip-pill {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  border: 1px solid;
+}
+
+.ip-pill--green { background: #f0faf6; border-color: #c3e9dd; color: #278c78; }
+.ip-pill--amber { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.ip-pill--red   { background: #fff5f5; border-color: #fecaca; color: #991b1b; }
+
+.ip-topic-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ---- Progress bar ---- */
+.ip-progress-wrap  { display: flex; align-items: center; gap: 8px; }
+.ip-progress-track { flex: 1; height: 6px; border-radius: 99px; background: #e8edf3; overflow: hidden; min-width: 80px; }
+.ip-progress-fill  { height: 100%; background: #278c78; border-radius: 99px; transition: width .5s ease; }
+.ip-progress-label { font-size: 12px; color: #718092; font-weight: 600; white-space: nowrap; }
+
+/* ---- Session toolbar ---- */
+.ip-session         { display: grid; gap: 20px; }
+.ip-session-toolbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+  padding: 14px 18px; background: white; border: 1px solid #e4eaf0; border-radius: 12px;
+  box-shadow: 0 2px 8px #163b520a;
+}
+.ip-session-info    { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ip-session-title   { font: 700 14px 'Manrope', sans-serif; color: #243a4d; }
+.ip-session-controls{ display: flex; align-items: center; gap: 12px; }
+
+/* ---- Question navigator dots ---- */
+.ip-q-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ip-q-nav-dot {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  border: 2px solid #dde4ea;
+  background: white;
+  color: #718092;
+  font-size: 12px; font-weight: 700; font-family: inherit;
+  cursor: pointer;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.ip-q-nav-dot:hover         { border-color: #9dd4c8; color: #278c78; }
+.ip-q-nav-dot--active       { border-color: #278c78; background: #278c78; color: white; }
+.ip-q-nav-dot--good         { border-color: #c3e9dd; background: #f0faf6; color: #278c78; }
+.ip-q-nav-dot--ok           { border-color: #fde68a; background: #fffbeb; color: #92400e; }
+.ip-q-nav-dot--low          { border-color: #fecaca; background: #fff5f5; color: #c0392b; }
+.ip-q-nav-dot--active.ip-q-nav-dot--good { background: #278c78; color: white; }
+.ip-q-nav-dot--active.ip-q-nav-dot--ok   { background: #d97706; color: white; border-color: #d97706; }
+.ip-q-nav-dot--active.ip-q-nav-dot--low  { background: #c0392b; color: white; border-color: #c0392b; }
+
+/* ---- Question card ---- */
+.ip-q-card {
+  background: white;
+  border: 1px solid #e4eaf0;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px #163b520a;
+}
+
+.ip-q-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.ip-q-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.ip-q-num {
+  color: #9aa6b1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ip-q-text {
+  margin: 0 0 20px;
+  color: #172a3b;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ---- Answer form footer ---- */
+.ip-answer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.ip-word-count { color: #9aa6b1; font-size: 11px; }
+.ip-answer-actions { display: flex; align-items: center; gap: 8px; }
+
+.ip-reveal-btn {
+  padding: 7px 12px;
+  border: 1px solid #dde4ea;
+  border-radius: 8px;
+  background: white;
+  color: #526476;
+  font-size: 12px; font-weight: 600; font-family: inherit;
+  cursor: pointer;
+  transition: border-color .15s, color .15s;
+}
+.ip-reveal-btn:hover { border-color: #278c78; color: #278c78; }
+
+.ip-submit-btn {
+  height: 38px; padding: 0 20px;
+  border: 0; border-radius: 9px;
+  background: #278c78; color: white;
+  font-size: 13px; font-weight: 700; font-family: inherit;
+  cursor: pointer;
+  transition: background .2s;
+}
+.ip-submit-btn:hover:not(:disabled) { background: #1f7665; }
+.ip-submit-btn:disabled             { opacity: .6; cursor: not-allowed; }
+
+/* ---- Suggested answer reveal ---- */
+.ip-suggested-answer {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f7f9fc;
+  border: 1px solid #e2e9ed;
+  border-radius: 10px;
+  animation: fadeIn .18s ease;
+}
+.ip-suggested-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #526476;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+}
+.ip-suggested-answer p { margin: 0; color: #334155; font-size: 13.5px; line-height: 1.7; }
+
+/* ---- Feedback ---- */
+.ip-feedback-wrap { display: grid; gap: 14px; }
+
+.ip-feedback-banner {
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  border: 1px solid;
+}
+.ip-feedback-banner--good { background: #f0faf6; border-color: #c3e9dd; color: #1e6b5c; }
+.ip-feedback-banner--ok   { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+.ip-feedback-banner--low  { background: #fff5f5; border-color: #fecaca; color: #991b1b; }
+
+.ip-feedback-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.ip-feedback-section { display: grid; gap: 7px; }
+.ip-feedback-section-title { font-size: 11px; font-weight: 700; letter-spacing: .4px; text-transform: uppercase; }
+.ip-feedback-section-title--green { color: #278c78; }
+.ip-feedback-section-title--red   { color: #c0392b; }
+
+.ip-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.ip-chip {
+  padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; border: 1px solid;
+}
+.ip-chip--green { background: #f0faf6; border-color: #c3e9dd; color: #1a6a5a; }
+.ip-chip--red   { background: #fff5f5; border-color: #fecaca; color: #991b1b; }
+
+.ip-tips-list { display: grid; gap: 8px; }
+.ip-tip {
+  display: flex; gap: 10px;
+  padding: 10px 14px;
+  background: white; border: 1px solid #e6ebf0; border-radius: 9px;
+  font-size: 13px; line-height: 1.6; color: #334155;
+}
+.ip-tip-icon { flex-shrink: 0; font-size: 15px; }
+
+.ip-your-answer-wrap { display: grid; gap: 5px; }
+.ip-your-answer-label { color: #9aa6b1; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px; }
+.ip-your-answer-text  { margin: 0; color: #526476; font-size: 13px; line-height: 1.6; font-style: italic; }
+
+/* ---- Pagination ---- */
+.ip-q-pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ---- Floating finish bar ---- */
+.ip-finish-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 24px;
+  background: white;
+  border-top: 1px solid #e4eaf0;
+  box-shadow: 0 -4px 20px #163b5214;
+  z-index: 100;
+  font-size: 13px; color: #526476; font-weight: 600;
+}
+
+/* ---- Summary ---- */
+.ip-summary { display: grid; gap: 24px; }
+
+.ip-summary-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ip-summary-score {
+  display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0;
+}
+.ip-summary-score-label { font: 700 13px 'Manrope', sans-serif; }
+
+.ip-summary-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.ip-stat-box {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  padding: 16px 8px;
+  background: white; border: 1px solid #e4eaf0; border-radius: 12px;
+}
+.ip-stat-box-num { font: 800 24px 'Manrope', sans-serif; color: #172a3b; letter-spacing: -.5px; }
+.ip-stat-box-lbl { font-size: 11px; font-weight: 600; color: #9aa6b1; }
+
+.ip-topic-breakdown       { background: white; border: 1px solid #e4eaf0; border-radius: 14px; padding: 20px; }
+.ip-topic-breakdown-grid  { display: grid; gap: 12px; margin-top: 14px; }
+.ip-topic-breakdown-item  { display: grid; gap: 6px; }
+.ip-topic-breakdown-top   { display: flex; align-items: center; justify-content: space-between; }
+.ip-mini-bar-track        { height: 6px; border-radius: 99px; background: #e8edf3; overflow: hidden; }
+.ip-mini-bar-fill         { height: 100%; border-radius: 99px; transition: width .6s ease; }
+
+/* ---- History panel ---- */
+.ip-history-panel {
+  margin-top: 32px;
+  display: grid;
+  gap: 10px;
+}
+.ip-history-panel-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;
+}
+
+.ip-history-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 16px;
+  background: white; border: 1px solid #e4eaf0; border-radius: 10px;
+  transition: border-color .15s;
+}
+.ip-history-row:hover { border-color: #c3e9dd; }
+
+.ip-history-left     { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.ip-history-score    { font: 800 18px 'Manrope', sans-serif; flex-shrink: 0; width: 46px; }
+.ip-history-meta     { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ip-history-title    { color: #243a4d; font-size: 13px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ip-history-sub      { color: #9aa6b1; font-size: 11px; display: flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.ip-history-actions  { display: flex; gap: 6px; flex-shrink: 0; }
+
+/* ---- Shared ---- */
+.ip-empty { color: #9aa6b1; font-size: 13px; margin: 0; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+/* ---- Responsive ---- */
+@media (max-width: 640px) {
+  .ip-shell              { padding: 32px 0 80px; }
+  .ip-difficulty-grid    { grid-template-columns: 1fr; }
+  .ip-feedback-grid      { grid-template-columns: 1fr; }
+  .ip-summary-stats      { grid-template-columns: repeat(2, 1fr); }
+  .ip-session-toolbar    { flex-direction: column; align-items: flex-start; }
+  .ip-q-pagination       { flex-direction: column; }
+  .ip-start-btn--sm      { width: 100%; }
+  .ip-summary-header     { flex-direction: column; }
+  .ip-finish-bar         { padding: 10px 16px; }
+}
